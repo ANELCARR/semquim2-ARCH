@@ -4,7 +4,7 @@ import numpy as np
 from scipy.ndimage.interpolation import zoom
 from streamlit_drawable_canvas import st_canvas
 from utils import process_image
-st.markdown("# green Reconocimiento :blue[De] :red[Digitos]:pencil:💯🥼🔍")
+st.markdown("# Reconocimiento :blue[De] :blue[Digitos]:pencil:💯🥼🔍")
 
 # Load trained model
 model = tf.keras.models.load_model('mi_modelo.h5')
@@ -19,7 +19,7 @@ if np.any(canvas_result.image_data):
     processed_image = process_image(canvas_result.image_data)
     # Make prediction using model
     Prediccion = model.predict(processed_image).argmax()
-    # Display Prediccion👀
+    # Display Prediccion :pencil:👀
     st.header('Prediccion:')
     st.markdown('Este numero parece ser un \n # :red[' + str(Prediccion) + ']')
 else:
