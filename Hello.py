@@ -4,7 +4,7 @@ import numpy as np
 from scipy.ndimage.interpolation import zoom
 from streamlit_drawable_canvas import st_canvas
 from utils import process_image
-st.markdown("# :Reconocimiento :blue[De] :red[Digitos]💯🥼🔍")
+st.markdown("# :Reconocimiento :blue[De] :red[Digitos]:💯🥼🔍")
 
 # Load trained model
 model = tf.keras.models.load_model('mi_modelo.h5')
@@ -18,11 +18,11 @@ if np.any(canvas_result.image_data):
     # Convert drawn image to grayscale and resize to 28x28
     processed_image = process_image(canvas_result.image_data)
     # Make prediction using model
-    prediction = model.predict(processed_image).argmax()
+    Prediccion = model.predict(processed_image).argmax()
     # Display Prediccion 👀
-    st.header('Prediction:')
-    st.markdown('This number appears to be a \n # :red[' + str(prediction) + ']')
+    st.header('Prediccion:')
+    st.markdown('This number appears to be a \n # :red[' + str(Prediccion) + ']')
 else:
     # Display message if canvas is empty
-    st.header('Prediction:')
+    st.header('Prediccion:')
     st.write('No number drawn, please draw a digit to get a prediction.')
