@@ -21,7 +21,7 @@ if np.any(canvas_result.image_data):
     Prediccion = model.predict(processed_image).argmax()
     # Display Prediccion
     st.header('Prediccion:')
-    st.markdown('Este numero parece ser un \n # :blue[' + str(Prediccion) + ']')
+    st.markdown('Este numero parece ser un \n # :red[' + str(Prediccion) + ']')
 else:
     # Display message if canvas is empty
     st.header('Prediccion:')
