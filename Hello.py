@@ -19,7 +19,7 @@ if np.any(canvas_result.image_data):
     processed_image = process_image(canvas_result.image_data)
     # Make prediction using model
     prediction = model.predict(processed_image).argmax()
-    # Display prediction
+    # Display Prediccion 👀
     st.header('Prediction:')
     st.markdown('This number appears to be a \n # :red[' + str(prediction) + ']')
 else:
